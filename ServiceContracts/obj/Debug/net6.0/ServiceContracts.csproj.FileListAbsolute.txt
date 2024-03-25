@@ -1,0 +1,15 @@
+D:\προγραμματισμός\Asp.Net\16CrudExample\ServiceContracts\bin\Debug\net6.0\ServiceContracts.deps.json
+D:\προγραμματισμός\Asp.Net\16CrudExample\ServiceContracts\bin\Debug\net6.0\ServiceContracts.dll
+D:\προγραμματισμός\Asp.Net\16CrudExample\ServiceContracts\bin\Debug\net6.0\ServiceContracts.pdb
+D:\προγραμματισμός\Asp.Net\16CrudExample\ServiceContracts\bin\Debug\net6.0\Entities.dll
+D:\προγραμματισμός\Asp.Net\16CrudExample\ServiceContracts\bin\Debug\net6.0\Entities.pdb
+D:\προγραμματισμός\Asp.Net\16CrudExample\ServiceContracts\obj\Debug\net6.0\ServiceContracts.csproj.AssemblyReference.cache
+D:\προγραμματισμός\Asp.Net\16CrudExample\ServiceContracts\obj\Debug\net6.0\ServiceContracts.GeneratedMSBuildEditorConfig.editorconfig
+D:\προγραμματισμός\Asp.Net\16CrudExample\ServiceContracts\obj\Debug\net6.0\ServiceContracts.AssemblyInfoInputs.cache
+D:\προγραμματισμός\Asp.Net\16CrudExample\ServiceContracts\obj\Debug\net6.0\ServiceContracts.AssemblyInfo.cs
+D:\προγραμματισμός\Asp.Net\16CrudExample\ServiceContracts\obj\Debug\net6.0\ServiceContracts.csproj.CoreCompileInputs.cache
+D:\προγραμματισμός\Asp.Net\16CrudExample\ServiceContracts\obj\Debug\net6.0\ServiceContracts.csproj.CopyComplete
+D:\προγραμματισμός\Asp.Net\16CrudExample\ServiceContracts\obj\Debug\net6.0\ServiceContracts.dll
+D:\προγραμματισμός\Asp.Net\16CrudExample\ServiceContracts\obj\Debug\net6.0\refint\ServiceContracts.dll
+D:\προγραμματισμός\Asp.Net\16CrudExample\ServiceContracts\obj\Debug\net6.0\ServiceContracts.pdb
+D:\προγραμματισμός\Asp.Net\16CrudExample\ServiceContracts\obj\Debug\net6.0\ref\ServiceContracts.dll

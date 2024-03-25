@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "EzwwbjSmIlMlHor7kZS6XTGVs+F6wBMDKqN2txJ+HzQ=",
+  "Source": "16CrudExample",
+  "BasePath": "_content/16CrudExample",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "16CrudExample\\wwwroot",
+      "Source": "16CrudExample",
+      "ContentRoot": "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\16CrudExample\\wwwroot\\",
+      "BasePath": "_content/16CrudExample",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\16CrudExample\\wwwroot\\StyleSheet.css",
+      "SourceId": "16CrudExample",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\16CrudExample\\wwwroot\\",
+      "BasePath": "_content/16CrudExample",
+      "RelativePath": "StyleSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\StyleSheet.css"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+D:\προγραμματισμός\Asp.Net\16CrudExample\Services\bin\Debug\net6.0\Services.deps.json
+D:\προγραμματισμός\Asp.Net\16CrudExample\Services\bin\Debug\net6.0\Services.dll
+D:\προγραμματισμός\Asp.Net\16CrudExample\Services\bin\Debug\net6.0\Services.pdb
+D:\προγραμματισμός\Asp.Net\16CrudExample\Services\bin\Debug\net6.0\Entities.dll
+D:\προγραμματισμός\Asp.Net\16CrudExample\Services\bin\Debug\net6.0\ServiceContracts.dll
+D:\προγραμματισμός\Asp.Net\16CrudExample\Services\bin\Debug\net6.0\ServiceContracts.pdb
+D:\προγραμματισμός\Asp.Net\16CrudExample\Services\bin\Debug\net6.0\Entities.pdb
+D:\προγραμματισμός\Asp.Net\16CrudExample\Services\obj\Debug\net6.0\Services.csproj.AssemblyReference.cache
+D:\προγραμματισμός\Asp.Net\16CrudExample\Services\obj\Debug\net6.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\προγραμματισμός\Asp.Net\16CrudExample\Services\obj\Debug\net6.0\Services.AssemblyInfoInputs.cache
+D:\προγραμματισμός\Asp.Net\16CrudExample\Services\obj\Debug\net6.0\Services.AssemblyInfo.cs
+D:\προγραμματισμός\Asp.Net\16CrudExample\Services\obj\Debug\net6.0\Services.csproj.CoreCompileInputs.cache
+D:\προγραμματισμός\Asp.Net\16CrudExample\Services\obj\Debug\net6.0\Services.csproj.CopyComplete
+D:\προγραμματισμός\Asp.Net\16CrudExample\Services\obj\Debug\net6.0\Services.dll
+D:\προγραμματισμός\Asp.Net\16CrudExample\Services\obj\Debug\net6.0\refint\Services.dll
+D:\προγραμματισμός\Asp.Net\16CrudExample\Services\obj\Debug\net6.0\Services.pdb
+D:\προγραμματισμός\Asp.Net\16CrudExample\Services\obj\Debug\net6.0\ref\Services.dll

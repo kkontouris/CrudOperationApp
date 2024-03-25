@@ -1,0 +1,11 @@
+D:\προγραμματισμός\Asp.Net\16CrudExample\Entities\bin\Debug\net6.0\Entities.deps.json
+D:\προγραμματισμός\Asp.Net\16CrudExample\Entities\bin\Debug\net6.0\Entities.dll
+D:\προγραμματισμός\Asp.Net\16CrudExample\Entities\bin\Debug\net6.0\Entities.pdb
+D:\προγραμματισμός\Asp.Net\16CrudExample\Entities\obj\Debug\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\προγραμματισμός\Asp.Net\16CrudExample\Entities\obj\Debug\net6.0\Entities.AssemblyInfoInputs.cache
+D:\προγραμματισμός\Asp.Net\16CrudExample\Entities\obj\Debug\net6.0\Entities.AssemblyInfo.cs
+D:\προγραμματισμός\Asp.Net\16CrudExample\Entities\obj\Debug\net6.0\Entities.csproj.CoreCompileInputs.cache
+D:\προγραμματισμός\Asp.Net\16CrudExample\Entities\obj\Debug\net6.0\Entities.dll
+D:\προγραμματισμός\Asp.Net\16CrudExample\Entities\obj\Debug\net6.0\refint\Entities.dll
+D:\προγραμματισμός\Asp.Net\16CrudExample\Entities\obj\Debug\net6.0\Entities.pdb
+D:\προγραμματισμός\Asp.Net\16CrudExample\Entities\obj\Debug\net6.0\ref\Entities.dll
