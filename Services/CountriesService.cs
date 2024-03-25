@@ -14,6 +14,7 @@ namespace Services
 				_countries = new List<Country>();
         }
 
+		#region AddCountry
 		/// <summary>
 		/// Give the CountryAddRequest and return the matching CountryResponse
 		/// </summary>
@@ -21,7 +22,7 @@ namespace Services
 		/// <returns></returns>
 		/// <exception cref="ArgumentNullException"></exception>
 		/// <exception cref="ArgumentException"></exception>
-        public CountryResponse AddCountry(CountryAddRequest? countryAddRequest)
+		public CountryResponse AddCountry(CountryAddRequest? countryAddRequest)
 		{
 
 			//Validation: The countryAddRequest can not be null
@@ -50,7 +51,9 @@ namespace Services
 
 			return country.ToCountryResponse();
 		}
+		#endregion
 
+		#region GetAllCountries
 		/// <summary>
 		/// Return all the countries of list
 		/// </summary>
@@ -65,7 +68,9 @@ namespace Services
 			}
 			return countryResponseList;
 		}
+		#endregion
 
+		#region GetCountryByCountryId
 		/// <summary>
 		/// Returns country object based on the given countryId
 		/// </summary>
@@ -79,9 +84,10 @@ namespace Services
 				return null;
 			}
 
-			Country? countryFromGuid=_countries.FirstOrDefault(country=>country.CountryId==CountryId);
-			 CountryResponse? countryResponseFromGuid = (CountryResponse)countryFromGuid.ToCountryResponse();
-			return countryResponseFromGuid;
+			Country? countryFromId=_countries.FirstOrDefault(country=>country.CountryId==CountryId);
+			 CountryResponse? countryResponseFromId = (CountryResponse)countryFromId.ToCountryResponse();
+			return countryResponseFromId;
 		}
+		#endregion
 	}
 }
