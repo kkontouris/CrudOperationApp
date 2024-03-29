@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ServiceContracts.Enums;
 using Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace ServiceContracts.Dto
 {
@@ -13,7 +14,10 @@ namespace ServiceContracts.Dto
 	/// </summary>
 	public class PersonAddRequest
 	{
+		[Required(ErrorMessage ="Person name can not be blanc")]
         public string? PersonName { get; set; }
+		[Required(ErrorMessage = "Email can not be blanc")]
+		[EmailAddress(ErrorMessage ="Email address should be in specific format")]
 		public string? Email { get; set; }
 
 		public DateTime? DateOfBirth { get; set; }

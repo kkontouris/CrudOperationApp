@@ -37,7 +37,7 @@ namespace CrudTests
         public void AddCountry_CountryNameIsNull()
         {
             CountryAddRequest? request=new CountryAddRequest() { CountryName=null};
-            Assert.Throws<ArgumentException>(() => _countriesService.AddCountry(request));
+            Assert.Throws<ArgumentException>(() => { _countriesService.AddCountry(request); });
         }
 
 		//when the country name is duplicate , throws argument exception

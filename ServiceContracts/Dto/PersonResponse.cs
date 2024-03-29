@@ -17,9 +17,33 @@ namespace ServiceContracts.Dto
         public string? Gender { get; set; }
 		public Guid? CountryId { get; set; }
 		public string? Address { get; set; }
-        public string? ReceiveNewsLetters { get; set; }
+        public bool? ReceiveNewsLetters { get; set; }
 
-    }
+        public double? Age { get; set; }
+
+		public override bool Equals(object? obj)
+		{
+			if(obj == null)
+			{
+				return false;
+			}
+			if (obj.GetType()!=typeof(PersonResponse))
+			{
+				return false;
+			}
+
+			PersonResponse personResponse = (PersonResponse)obj;
+			return PersonId == personResponse.PersonId &&
+				PersonName == personResponse.PersonName &&
+				Email == personResponse.Email &&
+				DateOfBirth == personResponse.DateOfBirth &&
+				CountryId == personResponse.CountryId &&
+				Address == personResponse.Address &&
+				ReceiveNewsLetters == personResponse.ReceiveNewsLetters &&
+				Gender == personResponse.Gender;
+		}
+
+	}
 	public static class PersonExtensions
 	{
 		public static PersonResponse ToPersonResponse(this Person person)
@@ -33,7 +57,8 @@ namespace ServiceContracts.Dto
 				Gender = person.Gender,
 				CountryId = person.CountryId,
 				Address = person.Address,
-				ReceiveNewsLetters = person.ReceiveNewsLeters
+				ReceiveNewsLetters = person.ReceiveNewsLeters,
+				Age = (person.DateOfBirth != null) ? Math.Round((DateTime.Now - person.DateOfBirth.Value).TotalDays / 365.25):null
 			};
 			
 		}
