@@ -47,6 +47,20 @@ namespace ServiceContracts
 		public List<PersonResponse> GetSortedPersons(List<PersonResponse> allPersons, string sortBy, SortOrderOptions sortOrder);
 
 
+		/// <summary>
+		/// Updates the specified given Person object based on the specified Person Id
+		/// </summary>
+		/// <param name="request">Person Details to Update</param>
+		/// <returns>The PersonResponse object after update</returns>
+		public PersonResponse UpdatePerson(PersonUpdateRequest? request);
+
+
+		/// <summary>
+		/// Deletes a person based on the given person id
+		/// </summary>
+		/// <param name="PersonId">PersonId for the person to delete</param>
+		/// <returns>true if the deletion is successfull or false</returns>
+		public bool DeletePerson(Guid? PersonId);
 
 	}
 

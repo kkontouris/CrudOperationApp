@@ -5,6 +5,7 @@ using Services;
 using Entities;
 using Xunit.Sdk;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CrudTests
 {
@@ -318,8 +319,154 @@ namespace CrudTests
 					Assert.Equal(personResponseListFromAdd[i], personResponseListFromSort[i]);
 				}
 			}
-
-			#endregion
 		}
+		#endregion
+
+
+
+		#region UpdatePerson
+		[Fact]
+		//if personUpdateRequest is null then throws a ArgumentNullException 
+		public void UpdatePerson_NullPersonUpdateRequest()
+		{
+			PersonUpdateRequest? personUpdateRequest = null;
+
+			Assert.Throws<ArgumentNullException>(() => 
+				_personService.UpdatePerson(personUpdateRequest)
+			);
+
+
+			
+		}
+
+		[Fact]
+		//if personUpdateRequest is invalid then throws a ArgumentException 
+		public void UpdatePerson_InvalidPersonId()
+		{
+			PersonUpdateRequest? personUpdateRequest = new PersonUpdateRequest()
+			{
+				PersonId = Guid.NewGuid(),
+				PersonName="kk",
+				Email="kkwstas@apap.com"
+			};
+
+			Assert.Throws<ArgumentException>(() => _personService.UpdatePerson(personUpdateRequest));
+
+
+		}
+
+
+		[Fact]
+		//if PersonName is null then throws a ArgumentException 
+		public void UpdatePerson_NullPersonName()
+		{
+			PersonAddRequest? personAddRequest = new PersonAddRequest()
+			{
+				PersonName = "Konstantinos",
+				Address = "..address",
+				Email = "papaki@papaki.gr",
+				Gender = GenderOptions.Male,
+			};
+
+			PersonResponse person_response_from_add = _personService.AddPerson(personAddRequest);
+
+			PersonUpdateRequest person_update_request_from_add=person_response_from_add.ToPersonUpdateRequest();
+
+			person_update_request_from_add.PersonName = null;
+
+			Assert.Throws<ArgumentException>(() => _personService.UpdatePerson(person_update_request_from_add));
+
+			
+
+		}
+
+		[Fact]
+		//First we add a new Person and try to update the name and email 
+		public void UpdatePerson_PersonFullDetailsUpdation()
+		{
+			PersonAddRequest personAddRequest = new PersonAddRequest()
+			{
+				PersonName="Konstantinos",
+				Address="Kalavriton 22",
+				DateOfBirth=Convert.ToDateTime("2020-02-02"),
+				CountryId=Guid.NewGuid(),
+				Email="kkwstas@gmail.com",
+				Gender=GenderOptions.Male,
+				ReceiveNewsLetters=true,
+			};
+
+			PersonResponse personResponse_from_add = _personService.AddPerson(personAddRequest);
+
+			PersonUpdateRequest person_update_request_from_add= personResponse_from_add.ToPersonUpdateRequest();
+
+			person_update_request_from_add.PersonName = "KonstantinosK";
+
+			person_update_request_from_add.Email = "kkwstas@ymail.gr";
+
+			PersonResponse personResponse_with_update = _personService.UpdatePerson(person_update_request_from_add);
+
+			PersonResponse person_response_from_get = _personService.GetPersonByPersonId(personResponse_with_update.PersonId);
+
+			Assert.Equal(person_response_from_get, personResponse_with_update);
+
+			
+			
+
+		}
+
+		#endregion
+
+		#region DeletePerson
+
+		[Fact]
+		//if i supply a valid PersonId it should return true
+		public void DeletePerson_validPersonId()
+		{
+			//Arrange
+			CountryAddRequest countryAddRequest = new CountryAddRequest() { CountryName = "Greece" };
+			PersonAddRequest request = new PersonAddRequest()
+			{
+				PersonName = "Konstantinos",
+				Email = "kkwstas@psd.com"
+			};
+
+
+			PersonResponse? personResponse_from_add_request = _personService.AddPerson(request);
+			//Act
+			bool isDeleted=_personService.DeletePerson(personResponse_from_add_request.PersonId);
+			//Assert
+			Assert.True(isDeleted);
+
+		}
+
+		[Fact]
+		//if i supply a valid PersonId it should return true
+		public void DeletePerson_invalidPersonId()
+		{
+			//Arrange
+			CountryAddRequest countryAddRequest = new CountryAddRequest() { CountryName = "Greece" };
+			PersonAddRequest request = new PersonAddRequest()
+			{
+				PersonName = "Konstantinos",
+				Email = "kkwstas@psd.com"
+			};
+
+
+			PersonResponse? personResponse_from_add_request = _personService.AddPerson(request);
+			//Act
+			bool isDeleted = _personService.DeletePerson(Guid.NewGuid());
+			//Assert
+			Assert.False(isDeleted);
+
+		}
+
+
+		#endregion
+
+
+
+
+
+
 	}
 }

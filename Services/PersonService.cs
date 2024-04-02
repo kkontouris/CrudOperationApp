@@ -8,6 +8,8 @@ using ServiceContracts.Dto;
 using Entities;
 using ServiceContracts.Enums;
 using System.Collections;
+using Services.Helpers;
+using System.Net.Http.Headers;
 
 namespace Services
 {
@@ -158,6 +160,53 @@ namespace Services
 
 			};
 			return sortedPersons;
+		}
+
+		public PersonResponse UpdatePerson(PersonUpdateRequest? personUpdateRequest)
+		{
+			if (personUpdateRequest == null)
+			{
+				throw new ArgumentNullException(nameof(Person));
+			}
+
+
+			//validation
+			ValidationHelpers.ModelValidation(personUpdateRequest);
+
+			//seek in the database person object with the same id
+			Person? matchingPerson=_persons.FirstOrDefault(temp=>temp.PersonId == 
+			personUpdateRequest.PersonId);
+
+			if(matchingPerson==null)
+			{
+				throw new ArgumentException("Given Person Id does not exist");
+			}
+
+			//update all details
+			matchingPerson.PersonName = personUpdateRequest.PersonName;
+			matchingPerson.Address = personUpdateRequest.Address;
+			matchingPerson.Gender = personUpdateRequest.Gender.ToString();
+			matchingPerson.CountryId = personUpdateRequest.CountryId;
+			matchingPerson.DateOfBirth= personUpdateRequest.DateOfBirth;
+			matchingPerson.ReceiveNewsLeters = personUpdateRequest.ReceiveNewsLetters;
+
+			return matchingPerson.ToPersonResponse();
+		}
+
+		public bool DeletePerson(Guid? PersonId)
+		{
+			if(PersonId == null)
+			{
+				throw new ArgumentNullException(nameof(PersonId));
+			}
+			Person? matchingPerson = _persons.FirstOrDefault(temp => temp.PersonId == PersonId);
+			if (matchingPerson == null)
+			{
+				return false;
+				
+			}
+			_persons.RemoveAll(temp=>temp.PersonId==PersonId);
+			return true;
 		}
 	}
 }

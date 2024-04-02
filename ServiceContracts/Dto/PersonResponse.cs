@@ -10,14 +10,14 @@ namespace ServiceContracts.Dto
 {
 	public class PersonResponse
 	{
-        public Guid? PersonId { get; set; }
+        public Guid PersonId { get; set; }
 		public string? PersonName {  get; set; }
 		public string? Email { get; set; }
 		public DateTime? DateOfBirth { get; set; }
         public string? Gender { get; set; }
 		public Guid? CountryId { get; set; }
 		public string? Address { get; set; }
-        public bool? ReceiveNewsLetters { get; set; }
+        public bool ReceiveNewsLetters { get; set; }
 
         public double? Age { get; set; }
 
@@ -41,6 +41,23 @@ namespace ServiceContracts.Dto
 				Address == personResponse.Address &&
 				ReceiveNewsLetters == personResponse.ReceiveNewsLetters &&
 				Gender == personResponse.Gender;
+		}
+
+		public PersonUpdateRequest ToPersonUpdateRequest()
+		{
+	 return new PersonUpdateRequest()
+			{
+				PersonId = PersonId,
+				PersonName = PersonName,
+				Email = Email,
+				DateOfBirth = DateOfBirth,
+				Address = Address,
+				Gender = (GenderOptions)Enum.Parse(typeof(GenderOptions),Gender,true),
+				CountryId=CountryId,
+				ReceiveNewsLetters=ReceiveNewsLetters
+
+			};
+
 		}
 
 	}
