@@ -9,20 +9,31 @@ namespace Services
 	{
 		//like a database
 		List<Country> _countries;
-        public CountriesService()
+        public CountriesService(bool initialize=true)
         {
 				_countries = new List<Country>();
+
+			if (initialize)
+			{
+				_countries.AddRange(
+					new List<Country>()
+					{
+						new Country() { CountryId = Guid.Parse("1E9CC1B4-FD93-4E4C-B174-9448F6BEB0E6"), CountryName = "Greece" },
+						new Country() { CountryId = Guid.Parse("6ECC0D80-B535-4A56-8EDB-D204FA95E8C4"), CountryName = "Italy" },
+						new Country() { CountryId = Guid.Parse("49A67E49-94C4-45E3-873B-AD841FD2F580"), CountryName = "France" }
+					});
+			}
         }
 
-		#region AddCountry
-		/// <summary>
-		/// Give the CountryAddRequest and return the matching CountryResponse
-		/// </summary>
-		/// <param name="countryAddRequest"></param>
-		/// <returns></returns>
-		/// <exception cref="ArgumentNullException"></exception>
-		/// <exception cref="ArgumentException"></exception>
-		public CountryResponse AddCountry(CountryAddRequest? countryAddRequest)
+        #region AddCountry
+        /// <summary>
+        /// Give the CountryAddRequest and return the matching CountryResponse
+        /// </summary>
+        /// <param name="countryAddRequest"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentException"></exception>
+        public CountryResponse AddCountry(CountryAddRequest? countryAddRequest)
 		{
 
 			//Validation: The countryAddRequest can not be null
@@ -84,9 +95,11 @@ namespace Services
 				return null;
 			}
 
-			Country? countryFromId=_countries.FirstOrDefault(country=>country.CountryId==CountryId);
-			 CountryResponse? countryResponseFromId = (CountryResponse)countryFromId.ToCountryResponse();
-			return countryResponseFromId;
+			Country? country_response_from_list=_countries.FirstOrDefault(country=>country.CountryId==CountryId);
+
+			if (country_response_from_list == null)
+				return null;
+			 return (CountryResponse)country_response_from_list.ToCountryResponse();
 		}
 		#endregion
 	}

@@ -16,14 +16,17 @@ namespace ServiceContracts.Dto
 	{
 		[Required(ErrorMessage ="Person name can not be blanc")]
         public string? PersonName { get; set; }
+		[DataType(DataType.EmailAddress)]
 		[Required(ErrorMessage = "Email can not be blanc")]
 		[EmailAddress(ErrorMessage ="Email address should be in specific format")]
 		public string? Email { get; set; }
 
+		[DataType(DataType.Date)]
 		public DateTime? DateOfBirth { get; set; }
 
         public GenderOptions? Gender { get; set; }
 
+		[Required(ErrorMessage ="Please select a country")]
 		public Guid? CountryId { get; set; }
 
 		public string? Address { get; set; }

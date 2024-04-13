@@ -27,7 +27,17 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\Entities\\Entities.csproj"
+              },
+              "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\ServiceContracts\\ServiceContracts.csproj": {
+                "projectPath": "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\ServiceContracts\\ServiceContracts.csproj"
+              },
+              "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\Services\\Services.csproj": {
+                "projectPath": "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\Services\\Services.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -54,6 +64,179 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\Entities\\Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\Entities\\Entities.csproj",
+        "projectName": "Entities",
+        "projectPath": "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\kwstas\\.nuget\\packages\\",
+        "outputPath": "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\kwstas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\ServiceContracts\\ServiceContracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\ServiceContracts\\ServiceContracts.csproj",
+        "projectName": "ServiceContracts",
+        "projectPath": "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\ServiceContracts\\ServiceContracts.csproj",
+        "packagesPath": "C:\\Users\\kwstas\\.nuget\\packages\\",
+        "outputPath": "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\ServiceContracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\kwstas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\Entities\\Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\Services\\Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\Services\\Services.csproj",
+        "projectName": "Services",
+        "projectPath": "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\kwstas\\.nuget\\packages\\",
+        "outputPath": "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\kwstas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\ServiceContracts\\ServiceContracts.csproj": {
+                "projectPath": "D:\\προγραμματισμός\\Asp.Net\\16CrudExample\\ServiceContracts\\ServiceContracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

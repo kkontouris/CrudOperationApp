@@ -19,7 +19,7 @@ namespace CrudTests
 
         public CountriesServiceTest()
         {
-            _countriesService = new CountriesService();
+            _countriesService = new CountriesService(false);
         }
 		#region AddCountry
 		//when you add null addrequest it should throw null argument exception

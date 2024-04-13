@@ -1,0 +1,37 @@
+[33mcommit 176b5fb3705e67f05fdea69a4016f35fd558c356[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: kkwstas <kkwstas@ymail.com>
+Date:   Tue Apr 2 22:33:15 2024 +0300
+
+    Added UpdatePerson and DeletePerson
+
+[33mcommit 4ef1a1b56cfdfddccecd3e8e4e1c4041a66f8bb1[m
+Author: kkwstas <kkwstas@ymail.com>
+Date:   Tue Apr 2 22:29:05 2024 +0300
+
+    Added UpdatePerson and DeletePerson
+
+[33mcommit 6384bdb62279f9cfa733f2ecbb23cafebc3b7e4a[m
+Author: kkwstas <kkwstas@ymail.com>
+Date:   Fri Mar 29 16:37:57 2024 +0200
+
+    Sort Person and UnitTest
+
+[33mcommit ea99d21fd4c346ddc8ec66c8acc613f44467183a[m
+Author: kkwstas <kkwstas@ymail.com>
+Date:   Mon Mar 25 20:52:51 2024 +0200
+
+    Added Person Domain and DTO
+
+[33mcommit 7cc987f56ebc981f0786b21d3f0431ad1beb598e[m
+Author: Konstantinos Kontouris <98758159+kkontouris@users.noreply.github.com>
+Date:   Mon Mar 25 12:54:06 2024 +0200
+
+    Create README.md
+    
+    xUnit
+
+[33mcommit 10ec0212e354e486277717b9ef83bfefb2f37afc[m
+Author: kkwstas <kkwstas@ymail.com>
+Date:   Mon Mar 25 12:17:19 2024 +0200
+
+    Completed Country Information Services and Tests

@@ -17,8 +17,8 @@ namespace CrudTests
 
 		public PersonServiceTest()
 		{
-			_personService = new PersonService();
-			_countriesService = new CountriesService();
+			_personService = new PersonService(false);
+			_countriesService = new CountriesService(false);
 		}
 		#region AddPerson
 		//if the personAddRequest is null throws null reference exception
@@ -45,7 +45,9 @@ namespace CrudTests
 		[Fact]
 		public void AddPerson_ProperPersonDetails()
 		{
-			PersonAddRequest personAddRequest = new PersonAddRequest()
+
+
+			PersonAddRequest? personAddRequest = new PersonAddRequest()
 			{
 				PersonName = "Konstantinos",
 				Address = "Kalavriotn 23",
@@ -56,13 +58,13 @@ namespace CrudTests
 				ReceiveNewsLetters = true
 			};
 			//Act
-			PersonResponse actualPersonResponse = _personService.AddPerson(personAddRequest);
-			List<PersonResponse> responsePersonListFromAdd = _personService.GetAllPersons();
+			PersonResponse person_response_from_add = _personService.AddPerson(personAddRequest);
+			List<PersonResponse> person_list = _personService.GetAllPersons();
 
 			//Assert
-			Assert.True(actualPersonResponse.PersonId != Guid.Empty);
+			Assert.True(person_response_from_add.PersonId != Guid.Empty);
 
-			Assert.Contains(actualPersonResponse, responsePersonListFromAdd);
+			Assert.Contains(person_response_from_add, person_list);
 		}
 		#endregion
 
@@ -92,11 +94,11 @@ namespace CrudTests
 		[Fact]
 		public void GetAllPersons_FewPersons()
 		{
-			CountryAddRequest request1 = new CountryAddRequest()
+			CountryAddRequest country_request = new CountryAddRequest()
 			{
 				CountryName = "Greece"
 			};
-			CountryResponse countryResponse = _countriesService.AddCountry(request1);
+			CountryResponse countryResponse = _countriesService.AddCountry(country_request);
 
 			PersonAddRequest requestPersonNew = new PersonAddRequest()
 			{
@@ -108,8 +110,7 @@ namespace CrudTests
 				DateOfBirth = Convert.ToDateTime("2000-02-02"),
 				Gender = GenderOptions.Male
 			};
-			List<PersonAddRequest> personAddRequestList = new List<PersonAddRequest>();
-			personAddRequestList.Add(requestPersonNew);
+			List<PersonAddRequest> personAddRequestList = new List<PersonAddRequest>() { requestPersonNew};
 
 
 			//list of PersonResponse
@@ -126,7 +127,11 @@ namespace CrudTests
 			List<PersonResponse> personResponseListFromGet = _personService.GetAllPersons();
 
 			//Assert
-			Assert.Equal(personResponseListFromAdd, personResponseListFromGet);
+			foreach(PersonResponse person_response_from_add  in personResponseListFromAdd)
+			{
+				Assert.Contains(person_response_from_add, personResponseListFromGet);
+			}
+			
 
 		}
 		#endregion

@@ -10,37 +10,64 @@ using ServiceContracts.Enums;
 using System.Collections;
 using Services.Helpers;
 using System.Net.Http.Headers;
+using Services.Helpers;
 
 namespace Services
 {
 	public class PersonService : IPersonService
 	{
 		private readonly List<Person> _persons;
+		private readonly ICountriesService _countriesService;
 
-        public PersonService()
+		public PersonService(bool initialize=true)
         {
-				_persons = new List<Person>();
+			_persons = new List<Person>();
+			_countriesService = new CountriesService();
+			if (initialize)
+			{
+				_persons.AddRange(
+					new List<Person>()
+					{
+						new Person(){PersonId=Guid.Parse("8B19CD5C-2361-4CEC-BCF0-F3D03975F42C"),PersonName="Konstantinos",
+						Address="Kalavrita 22", DateOfBirth=Convert.ToDateTime("1985-04-24"),Email="kkwstas@gaga.com",
+						Gender="Male",ReceiveNewsLeters=true,CountryId=Guid.Parse("1E9CC1B4-FD93-4E4C-B174-9448F6BEB0E6")},
+
+                        new Person(){PersonId=Guid.Parse("3300FD8F-DEED-4FFB-BB25-04937C386981"),PersonName="Magdalini",
+                        Address="Peukon 54", DateOfBirth=Convert.ToDateTime("1990-08-15"),Email="magda@gala.com",
+                        Gender="Female",ReceiveNewsLeters=false,CountryId=Guid.Parse("6ECC0D80-B535-4A56-8EDB-D204FA95E8C4")},
+
+                        new Person(){PersonId=Guid.Parse("72B839B5-CBE9-4243-9C29-34D3136DA891"),PersonName="Kate",
+                        Address="Alamanas 32", DateOfBirth=Convert.ToDateTime("2000-11-16"),Email="katia@gala.com",
+                        Gender="Female",ReceiveNewsLeters=true,CountryId=Guid.Parse("49A67E49-94C4-45E3-873B-AD841FD2F580")}
+
+                    });
+			}
         }
 
-        public PersonResponse AddPerson(PersonAddRequest request)
+		private PersonResponse ConvertPersonToPersonResponse(Person person)
+		{
+			PersonResponse personResponse = person.ToPersonResponse();
+			personResponse.Country = _countriesService.GetCountryByCountryId(person.CountryId)?.CountryName;
+			return personResponse;
+		}
+
+		public PersonResponse AddPerson(PersonAddRequest? request)
 		{
 			if (request == null) throw new ArgumentNullException(nameof(request));
 
-			if (request.PersonName == null)
-			{
-				throw new ArgumentException();
-			}
-			Person personAdded = request.ToPerson();
-			personAdded.PersonId=Guid.NewGuid();
-			_persons.Add(personAdded);
-			PersonResponse personResponseAdded=personAdded.ToPersonResponse();
+			//Model validation
+			ValidationHelpers.ModelValidation(request);
 
-			return personResponseAdded;
+			Person person = request.ToPerson();
+			person.PersonId=Guid.NewGuid();
+			_persons.Add(person);
+
+			return ConvertPersonToPersonResponse(person);
 		}
 
 		public List<PersonResponse> GetAllPersons()
 		{
-			return _persons.Select(temp=>temp.ToPersonResponse()).ToList();
+			return _persons.Select(temp=>ConvertPersonToPersonResponse(temp)).ToList();
 		}
 
 
@@ -57,8 +84,8 @@ namespace Services
 			{
 				return null;
 			}
-			
-			return personWithPersonId.ToPersonResponse();
+
+			return ConvertPersonToPersonResponse(personWithPersonId);
 				
 		}
 
@@ -69,29 +96,29 @@ namespace Services
 			List<PersonResponse> matchingPersons = allPersons;
 			if (searchBy == null || searchString==null)
 			{
-				return allPersons;
+				return matchingPersons;
 			}
 			else
 			{
 				switch(searchBy)
 				{
-					case nameof(Person.PersonName):
+					case nameof(PersonResponse.PersonName):
 						matchingPersons = allPersons.Where(temp => (!string.IsNullOrEmpty(temp.PersonName)
 						? temp.PersonName.Contains(searchString, StringComparison.OrdinalIgnoreCase) : true)).ToList();
 						break;
-					case nameof(Person.Email):
+					case nameof(PersonResponse.Email):
 						matchingPersons = allPersons.Where(temp => (!string.IsNullOrEmpty(temp.Email)
 						? temp.Email.Contains(searchString, StringComparison.OrdinalIgnoreCase) : true)).ToList();
 						break;
-					case nameof(Person.Address):
+					case nameof(PersonResponse.Address):
 						matchingPersons = allPersons.Where(temp => (!string.IsNullOrEmpty(temp.Address)
 						? temp.Address.Contains(searchString, StringComparison.OrdinalIgnoreCase) : true)).ToList();
 						break;
-					case nameof(Person.DateOfBirth):
+					case nameof(PersonResponse.DateOfBirth):
 						matchingPersons = allPersons.Where(temp => (temp.DateOfBirth!=null)
 						? temp.DateOfBirth.Value.ToString("dd mmm yyyy").Contains(searchString, StringComparison.OrdinalIgnoreCase) : true).ToList();
 						break;
-					case nameof(Person.Gender):
+					case nameof(PersonResponse.Gender):
 						matchingPersons = allPersons.Where(temp => (!string.IsNullOrEmpty(temp.Gender)
 						? temp.Gender.Contains(searchString, StringComparison.OrdinalIgnoreCase) : true)).ToList();
 						break;
@@ -190,7 +217,7 @@ namespace Services
 			matchingPerson.DateOfBirth= personUpdateRequest.DateOfBirth;
 			matchingPerson.ReceiveNewsLeters = personUpdateRequest.ReceiveNewsLetters;
 
-			return matchingPerson.ToPersonResponse();
+			return ConvertPersonToPersonResponse(matchingPerson);
 		}
 
 		public bool DeletePerson(Guid? PersonId)

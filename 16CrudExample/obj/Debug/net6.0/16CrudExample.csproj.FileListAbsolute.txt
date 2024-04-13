@@ -24,3 +24,13 @@ D:\προγραμματισμός\Asp.Net\16CrudExample\16CrudExample\obj\Debug\
 D:\προγραμματισμός\Asp.Net\16CrudExample\16CrudExample\obj\Debug\net6.0\16CrudExample.pdb
 D:\προγραμματισμός\Asp.Net\16CrudExample\16CrudExample\obj\Debug\net6.0\16CrudExample.genruntimeconfig.cache
 D:\προγραμματισμός\Asp.Net\16CrudExample\16CrudExample\obj\Debug\net6.0\ref\16CrudExample.dll
+D:\προγραμματισμός\Asp.Net\16CrudExample\16CrudExample\bin\Debug\net6.0\Entities.dll
+D:\προγραμματισμός\Asp.Net\16CrudExample\16CrudExample\bin\Debug\net6.0\ServiceContracts.dll
+D:\προγραμματισμός\Asp.Net\16CrudExample\16CrudExample\bin\Debug\net6.0\Services.dll
+D:\προγραμματισμός\Asp.Net\16CrudExample\16CrudExample\bin\Debug\net6.0\Entities.pdb
+D:\προγραμματισμός\Asp.Net\16CrudExample\16CrudExample\bin\Debug\net6.0\ServiceContracts.pdb
+D:\προγραμματισμός\Asp.Net\16CrudExample\16CrudExample\bin\Debug\net6.0\Services.pdb
+D:\προγραμματισμός\Asp.Net\16CrudExample\16CrudExample\obj\Debug\net6.0\16CrudExample.csproj.AssemblyReference.cache
+D:\προγραμματισμός\Asp.Net\16CrudExample\16CrudExample\obj\Debug\net6.0\16CrudExample.RazorAssemblyInfo.cache
+D:\προγραμματισμός\Asp.Net\16CrudExample\16CrudExample\obj\Debug\net6.0\16CrudExample.RazorAssemblyInfo.cs
+D:\προγραμματισμός\Asp.Net\16CrudExample\16CrudExample\obj\Debug\net6.0\16CrudExample.csproj.CopyComplete
